@@ -144,6 +144,9 @@
     <string name="more_device_settings_title">Other device options</string>
     <string name="sensors_motors_title">Sensors &amp; motors</string>
     <string name="display_calibration_title">Display calibration</string>
+    
+    <!-- Device settings title, on main settings screen. If clicked, the user is taken to the device settings screen full of device settings-->
+    <string name="device_settings">Advanced</string>
 
     <!-- Hardware tunables - Vibrator intensity -->
     <string name="vibrator_intensity_title">Vibrator intensity</string>

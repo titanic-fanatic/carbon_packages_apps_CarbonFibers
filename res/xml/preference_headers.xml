@@ -9,11 +9,16 @@
             android:title="@string/button_settings"
             android:fragment="com.carbon.fibers.fragments.ButtonSettings" />
 
+        <!-- Device Settings -->
         <header
-            android:id="@+id/more_device_settings"
-            android:title="@string/more_device_controls_title"
             android:icon="@drawable/ic_fibers_device"
-            android:fragment="com.carbon.fibers.fragments.MoreDeviceSettings" />
+            android:title="@string/device_settings"
+            android:id="@+id/device_settings">
+            <intent
+                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.DisplaySettings" />
+        </header>
 
         <header
             android:key="@+id/interface_settings"
