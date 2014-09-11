@@ -491,7 +491,7 @@ public class SettingsActivity extends PreferenceActivity implements ButtonBarHan
         if (header.id == R.id.more_device_settings) {
             try {
                 Intent intent = new Intent();
-                intent.setClassName("com.carbon.device", "com.carbon.device.DeviceSettings");
+                intent.setClassName("com.cyanogenmod.settings.device", "com.cyanogenmod.settings.device.DisplaySettings");
                 startActivity(intent);
                 return;
             } catch (ActivityNotFoundException e) {

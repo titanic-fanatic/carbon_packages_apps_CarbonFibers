@@ -13,11 +13,7 @@
         <header
             android:icon="@drawable/ic_fibers_device"
             android:title="@string/device_settings"
-            android:id="@+id/device_settings">
-            <intent
-                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.DisplaySettings" />
+            android:id="@+id/more_device_settings">
         </header>
 
         <header
