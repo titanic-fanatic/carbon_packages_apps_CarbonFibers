@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The CarbonRom Project
+<!-- Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,26 +14,54 @@
      limitations under the License.
 -->
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/recent_panel_category">
 
-    <ListPreference
-        android:key="clear_recents_button"
-        android:title="@string/clear_button_title"
-        android:dialogTitle="@string/clear_button_title"
-        android:entries="@array/clear_recents_entries"
-        android:entryValues="@array/clear_recents_values" />
+        <ListPreference
+                android:key="recent_panel_expanded_mode"
+                android:entries="@array/recent_panel_expanded_mode_entries"
+                android:entryValues="@array/recent_panel_expanded_mode_values"
+                android:title="@string/recent_panel_expanded_mode_title"
+                android:summary="@string/recent_panel_expanded_mode_summary"
+                android:persistent="false" />
 
-    <PreferenceScreen
-        android:key="recents_ram_bar"
-        android:fragment="com.carbon.fibers.fragments.ui.RamBar"
-        android:title="@string/ram_bar" />
+        <CheckBoxPreference
+                android:key="recent_panel_lefty_mode"
+                android:title="@string/recent_panel_lefty_mode_title"
+                android:summary="@string/recent_panel_lefty_mode_summary"
+                android:persistent="false" />
 
-    <ListPreference
-        android:key="ram_circle"
-        android:title="@string/ram_circle_title"
-        android:dialogTitle="@string/ram_circle_title"
-        android:entries="@array/ram_circle_entries"
-        android:entryValues="@array/ram_circle_values" />
+        <CheckBoxPreference
+                android:key="recent_panel_show_topmost"
+                android:title="@string/recent_panel_show_topmost_title"
+                android:summary="@string/recent_panel_show_topmost_summary"
+                android:persistent="false" />
+
+        <ListPreference
+                android:key="recent_panel_scale"
+                android:entries="@array/recent_panel_scale_entries"
+                android:entryValues="@array/recent_panel_scale_values"
+                android:title="@string/recent_panel_scale_title"
+                android:summary="@string/recent_panel_scale_summary"
+                android:persistent="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="recent_panel_bg_color"
+                android:title="@string/recent_panel_bg_color_title"
+                android:defaultValue="0x00ffffff"
+                alphaSlider="true" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="recent_card_bg_color"
+                android:title="@string/recent_card_bg_color_title"
+                android:defaultValue="0x00ffffff"
+                alphaSlider="true" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="recent_card_text_color"
+                android:title="@string/recent_card_text_color_title"
+                android:defaultValue="0x00ffffff"
+                alphaSlider="true" />
 
 </PreferenceScreen>
