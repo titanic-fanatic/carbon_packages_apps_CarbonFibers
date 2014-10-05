@@ -1171,6 +1171,11 @@
     <string name="recent_panel_bg_color_title">Panel background color</string>
     <string name="recent_card_bg_color_title">Card background color</string>
     <string name="recent_card_text_color_title">Card text color</string>
+    <string name="reset_default_message">Reset default</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="qs_style_reset_message">Reset all colors to default?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
