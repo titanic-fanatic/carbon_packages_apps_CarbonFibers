@@ -93,9 +93,10 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new GeneralSettings();
             frags[1] = new RecentsPanel();
-            frags[2] = new BatterySaverSettings();
-            frags[3] = new ProgressBar();
-            frags[4] = new AppCircleSideBar();
+            frags[2] = new DynamicSystemBars();
+            frags[3] = new BatterySaverSettings();
+            frags[4] = new ProgressBar();
+            frags[5] = new AppCircleSideBar();
         }
 
         @Override
@@ -119,6 +120,7 @@ public class InterfaceSettings extends SettingsPreferenceFragment {
         titleString = new String[] {
                     getString(R.string.ui_general_category),
                     getString(R.string.ui_recents_category),
+                    getString(R.string.dynamic_system_bars_category_title),
                     getString(R.string.battery_saver_title),
                     getString(R.string.progressbar_title),
                     getString(R.string.category_app_circle_bar_title)};
