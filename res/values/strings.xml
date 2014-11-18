@@ -183,7 +183,21 @@
     <string name="backlight_summary_disabled">Disabled</string>
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
-    
+
+    <!-- App Circle SideBar -->
+    <string name="category_app_circle_bar_title">App launcher</string>
+    <string name="app_circle_bar_title">App circle bar</string>
+    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <string name="app_circle_bar_included_apps_title">Included apps</string>
+    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
+    <string name="trigger_category">Trigger region</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
     <!-- Installer settings -->
     <string name="installer_title">Persistence</string>
     <string name="persist_options">Persistence</string>
@@ -230,6 +244,18 @@
 
     <!-- RAM circle -->
     <string name="ram_circle_title">RAM circle</string>
+
+    <!-- Recents Swipe in Floating Mode -->
+    <string name="recents_swipe_floating_title">Launch recent in floating</string>
+    <string name="recents_swipe_floating_ask">Ask later</string>
+    <string name="recents_swipe_floating_yes">Yes</string>
+    <string name="recents_swipe_floating_no">No</string>
+
+    <!-- Status Bar Notifications Swipe in Floating Mode -->
+    <string name="status_bar_notification_swipe_floating_title">Launch SB Notifications in floating</string>
+    <string name="status_bar_notification_swipe_floating_ask">Ask later</string>
+    <string name="status_bar_notification_swipe_floating_yes">Yes</string>
+    <string name="status_bar_notification_swipe_floating_no">No</string>
 
     <!-- Recents Ram Bar -->
     <string name="ram_bar">RAM bar</string>
@@ -722,15 +748,6 @@
     <string name="show_lte_or_fourgee_title">Use 4G icon</string>
     <string name="show_lte_or_fourgee_summary">Switch the network indicator from LTE to 4G</string>
 
-    <!-- Network Traffic -->
-    <string name="color_default">Default</string>
-    <string name="status_bar_show_network_stats_title">Show network speeds</string>
-    <string name="status_bar_show_network_stats_summary">Show network speeds in statusbar</string>
-    <string name="status_bar_network_stats_update_title">Update frequency</string>
-    <string name="status_bar_network_stats_update_summary">How often is indicator updated</string>
-    <string name="status_bar_network_stats_color_title">Network speeds text color</string>
-    <string name="status_bar_network_stats_color_summary">Network speeds text color in statusbar</string>
-
     <!-- Notification drawer background -->
     <string name="notification_style_title">Style</string>
     <string name="notification_style_summary">Change your notification drawer style</string>
@@ -1127,6 +1144,9 @@
     <string name="custom_statusbar_header_summary">Sets the background of the notification panel header to an image based on the current date and time</string>
 
     <!-- Heads up -->
+
+    <string name="heads_up_bg_color_title">Background color</string>
+    <string name="heads_up_text_color_title">Text color</string>
     <string name="heads_up_title">Heads up notification</string>
     <string name="heads_up_exclude_from_lock_screen">Disable on lockscreen</string>
     <string name="heads_up_expanded_title">Always expanded</string>
@@ -1180,5 +1200,34 @@
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Network traffic</string>
+    <string name="show_network_traffic_state">Status bar traffic monitor</string>
+    <string name="show_network_traffic_unit">Display unit</string>
+    <string name="show_network_traffic_frequency">Update interval</string>
+    <string name="show_network_traffic_disable">Disabled</string>
+    <string name="show_network_traffic_up">Outgoing</string>
+    <string name="show_network_traffic_down">Incoming</string>
+    <string name="show_network_traffic_all">Outgoing and incoming</string>
+    <string name="show_network_traffic_bit">Bits per second</string>
+    <string name="show_network_traffic_byte">Bytes per second</string>
+    <string name="show_network_traffic_500">500 ms</string>
+    <string name="show_network_traffic_1000">1000 ms</string>
+    <string name="show_network_traffic_1500">1500 ms</string>
+    <string name="show_network_traffic_2000">2000 ms</string>
+    <string name="network_traffic_autohide">Auto hide</string>
+    <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_color_style">Color style</string>
+    <string name="network_traffic_color_reset">Reset color</string>
+    <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
+
+    <string name="hw_keys_switch_title">Hardware keys switch</string>
+    <string name="touch_screen_gesture_title">Touch Screen Gestures Device</string>
+
+    <!-- 6 bar signal -->
+    <string name="status_bar_six_bar_signal_title">Enable Six Bar Signal</string>
+    <string name="status_bar_six_bar_signal_summary">Enable to show six bar signal in statusbar/qs</string>
 
 </resources>
