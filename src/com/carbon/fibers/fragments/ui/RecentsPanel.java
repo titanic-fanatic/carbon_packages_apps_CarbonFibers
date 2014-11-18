@@ -144,13 +144,6 @@ public class RecentsPanel extends SettingsPreferenceFragment implements DialogCr
                     Settings.System.RECENT_PANEL_SHOW_TOPMOST,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
-        } else if (preference == mRecentsSwipeFloating) {
-            int value = Integer.valueOf((String) objValue);
-            int index = mRecentsSwipeFloating.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_SWIPE_FLOATING, value);
-            mRecentsSwipeFloating.setSummary(mRecentsSwipeFloating.getEntries()[index]);
-            return true;
         }
         return false;
     }
