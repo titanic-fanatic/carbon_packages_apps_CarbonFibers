@@ -33,6 +33,19 @@
             android:title="@string/dynamic_navigation_bar_title"
             android:summary="@string/dynamic_navigation_bar_summary" />
 
+        <com.carbon.fibers.chameleonos.SeekBarPreference
+            android:key="dynamic_system_bars_anim_duration"
+            android:persistent="false"
+            android:title="@string/dynamic_status_bar_anim_duration_title"
+            android:summary="@string/dynamic_status_bar_anim_duration_summary"
+            android:max="1000"
+            settings:min="0"
+            settings:interval="1"
+            settings:unitsLeft=""
+            settings:unitsRight="ms"
+            android:defaultValue="500"
+            android:dependency="dynamic_status_bar" />
+
         <CheckBoxPreference
             android:key="dynamic_system_bars_gradient"
             android:title="@string/dynamic_system_bars_gradient_title"

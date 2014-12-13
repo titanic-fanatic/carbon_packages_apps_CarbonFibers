@@ -1230,12 +1230,14 @@
     <string name="status_bar_six_bar_signal_title">Enable Six Bar Signal</string>
     <string name="status_bar_six_bar_signal_summary">Enable to show six bar signal in statusbar/qs</string>
 
-<!-- Dynamic system bars -->
+    <!-- Dynamic system bars -->
     <string name="dynamic_system_bars_category_title">Dynamic system bars</string>
     <string name="dynamic_status_bar_title">Dynamic status bar</string>
     <string name="dynamic_status_bar_summary">Automatically update the background of the status bar</string>
     <string name="dynamic_navigation_bar_title">Dynamic navigation bar</string>
     <string name="dynamic_navigation_bar_summary">Automatically update the background of the navigation bar</string>
+    <string name="dynamic_status_bar_anim_duration_title">Animation duration</string>
+    <string name="dynamic_status_bar_anim_duration_summary">Animation duration of the dynamic system bar</string>
     <string name="dynamic_system_bars_gradient_title">System bar gradient</string>
     <string name="dynamic_system_bars_gradient_summary">Overlay a gradient on the system bars</string>
     <string name="dynamic_status_bar_filter_title">Darker status bar</string>

@@ -17,6 +17,8 @@
 package com.carbon.fibers.fragments.ui;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.content.res.Resources;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -30,11 +32,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.SeekBar;
 
 import com.carbon.fibers.R;
 import com.carbon.fibers.preference.SettingsPreferenceFragment;
 import com.carbon.fibers.Utils;
 import com.carbon.fibers.util.Helpers;
+import com.carbon.fibers.chameleonos.SeekBarPreference;
 
 public class DynamicSystemBars extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -42,11 +46,13 @@ public class DynamicSystemBars extends SettingsPreferenceFragment implements OnP
 
     private static final String KEY_DYNAMIC_STATUS_BAR = "dynamic_status_bar";
     private static final String KEY_DYNAMIC_NAVIGATION_BAR = "dynamic_navigation_bar";
+    private static final String KEY_DYNAMIC_SYSTEM_BARS_ANIM_DURATION = "dynamic_system_bars_anim_duration";
     private static final String KEY_DYNAMIC_SYSTEM_BARS_GRADIENT = "dynamic_system_bars_gradient";
     private static final String KEY_DYNAMIC_STATUS_BAR_FILTER = "dynamic_status_bar_filter";
 
     private CheckBoxPreference mDynamicStatusBar;
     private CheckBoxPreference mDynamicNavigationBar;
+    private SeekBarPreference mDynamicSystemBarsAnimDuration;
     private CheckBoxPreference mDynamicSystemBarsGradient;
     private CheckBoxPreference mDynamicStatusBarFilter;
 
@@ -78,6 +84,14 @@ public class DynamicSystemBars extends SettingsPreferenceFragment implements OnP
         mDynamicSystemBarsGradient =
                 (CheckBoxPreference) findPreference(KEY_DYNAMIC_SYSTEM_BARS_GRADIENT);
         mDynamicSystemBarsGradient.setPersistent(false);
+        
+        int dsbAnimationDuration = Settings.System.getInt(getContentResolver(),
+                Settings.System.DYNAMIC_SYSTEM_BARS_ANIM_DURATION_STATE, 500);
+
+        mDynamicSystemBarsAnimDuration =
+                (SeekBarPreference) findPreference(KEY_DYNAMIC_SYSTEM_BARS_ANIM_DURATION);
+        mDynamicSystemBarsAnimDuration.setOnPreferenceChangeListener(this);
+        mDynamicSystemBarsAnimDuration.setValue(dsbAnimationDuration);
 
         mDynamicStatusBarFilter =
                 (CheckBoxPreference) findPreference(KEY_DYNAMIC_STATUS_BAR_FILTER);
@@ -91,6 +105,18 @@ public class DynamicSystemBars extends SettingsPreferenceFragment implements OnP
         if (!mCheckPreferences) {
             return false;
         }
+        
+        Log.e(TAG, "---------------------------------------------------------------------------");
+        Log.e(TAG, "progress: " + newValue);
+        Log.e(TAG, "newValue.getClass(): " + newValue.getClass());
+        Log.e(TAG, "---------------------------------------------------------------------------");
+        
+        if (preference == mDynamicSystemBarsAnimDuration) {
+            int progress = ((Integer) newValue).intValue();
+            mDynamicSystemBarsAnimDuration.setValue(progress);
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.DYNAMIC_SYSTEM_BARS_ANIM_DURATION_STATE, progress);
+        }
+        
         return false;
     }
 
@@ -153,10 +179,19 @@ public class DynamicSystemBars extends SettingsPreferenceFragment implements OnP
         mDynamicNavigationBar.setEnabled(hasNavigationBar);
         mDynamicNavigationBar.setChecked(isNavigationBarDynamic);
 
+        int dsbAnimationDuration = Settings.System.getInt(getContentResolver(),
+                Settings.System.DYNAMIC_SYSTEM_BARS_ANIM_DURATION_STATE, 500);
         final boolean areSystemBarsGradient = isAnyBarDynamic && Settings.System.getInt(
                 getContentResolver(), Settings.System.DYNAMIC_SYSTEM_BARS_GRADIENT_STATE, 0) == 1;
         final boolean isStatusBarFilter = isStatusBarDynamic && Settings.System.getInt(
                 getContentResolver(), Settings.System.DYNAMIC_STATUS_BAR_FILTER_STATE, 0) == 1;
+        
+        mDynamicSystemBarsAnimDuration.setEnabled(isAnyBarDynamic);
+        mDynamicSystemBarsAnimDuration.setValue(dsbAnimationDuration);
+        
+        Log.e(TAG, "---------------------------------------------------------------------------");
+        Log.e(TAG, "dsbAnimationDuration: " + dsbAnimationDuration);
+        Log.e(TAG, "---------------------------------------------------------------------------");
 
         mDynamicSystemBarsGradient.setEnabled(isAnyBarDynamic &&
                 (areSystemBarsGradient || !isStatusBarFilter));
